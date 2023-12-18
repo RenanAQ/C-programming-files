@@ -9,11 +9,16 @@ int main(){
     char last[100];
     printf("What's your Last Name? ");
     scanf("%s", last);
-    /*Asking for age*/
+    /*Asking for age and year born*/
     int age;
-    printf("What's your age? ");
-    scanf("%d", &age);
+    int year;
+    printf("What's your age and year you were born? ");
+    scanf("%d %d", &age, &year);
+
 
     printf("Welcome, %s %s\n", first, last);
     printf("You're %d years old\n", age);
+
+    //Suming the age + year born
+    
 }
