@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <time.h>
 
 int main(){
     char first[100];
@@ -9,16 +10,28 @@ int main(){
     char last[100];
     printf("What's your Last Name? ");
     scanf("%s", last);
-    /*Asking for age and year born*/
-    int age;
+    
+    /*Asking the year born*/
     int year;
-    printf("What's your age and year you were born? ");
-    scanf("%d %d", &age, &year);
+    printf("What year you were born? ");
+    scanf("%d", &year);
+
+    // Calculating the year we are
+
+    //Get the current time
+    time_t currentTime;
+    struct tm *localTime;
+    time(&currentTime);
+    localTime = localtime(&currentTime);
+
+    //Extract the year
+    int actual_year = localTime->tm_year + 1900;
+
+    //Calculating your age
+    int your_age = actual_year - year;
 
 
     printf("Welcome, %s %s\n", first, last);
-    printf("You're %d years old\n", age);
+    printf("You're %d years old\n", your_age);
 
-    //Suming the age + year born
-    
 }
